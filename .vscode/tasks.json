@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build: AutoCAD 2024",
+      "type": "shell",
+      "command": "C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe",
+      "args": [
+        "${workspaceFolder}\\ArchDoorLibrary.sln",
+        "/restore",
+        "/t:Build",
+        "/p:Configuration=Debug",
+        "/p:AutoCADVersion=2024",
+        "/m"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Build: AutoCAD 2023",
+      "type": "shell",
+      "command": "C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe",
+      "args": [
+        "${workspaceFolder}\\ArchDoorLibrary.sln",
+        "/restore",
+        "/t:Build",
+        "/p:Configuration=Debug",
+        "/p:AutoCADVersion=2023",
+        "/m"
+      ],
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

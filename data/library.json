@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "doors": [
+    {
+      "id": "AD001",
+      "name": "Cửa đi 2 cánh vòm (mẫu minh họa)",
+      "path": "doors/AD001/door.json"
+    }
+  ]
+}

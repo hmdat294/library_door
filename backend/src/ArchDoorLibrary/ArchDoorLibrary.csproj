@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4E1D93D-20C8-4A1E-AF8A-44D09C2E0A10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ArchDoorLibrary</RootNamespace>
+    <AssemblyName>ArchDoorLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoCADVersion Condition="'$(AutoCADVersion)' == ''">2024</AutoCADVersion>
+    <AutoCAD2023Path Condition="'$(AutoCAD2023Path)' == ''">C:\Program Files\Autodesk\AutoCAD 2023</AutoCAD2023Path>
+    <AutoCAD2024Path Condition="'$(AutoCAD2024Path)' == ''">C:\Program Files\Autodesk\AutoCAD 2024</AutoCAD2024Path>
+    <AutoCADPath Condition="'$(AutoCADVersion)' == '2023'">$(AutoCAD2023Path)</AutoCADPath>
+    <AutoCADPath Condition="'$(AutoCADVersion)' == '2024'">$(AutoCAD2024Path)</AutoCADPath>
+    <LangVersion>7.3</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="AcCoreMgd">
+      <HintPath>$(AutoCADPath)\AcCoreMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcDbMgd">
+      <HintPath>$(AutoCADPath)\AcDbMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcMgd">
+      <HintPath>$(AutoCADPath)\AcMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PluginEntry.cs" />
+    <Compile Include="DoorPalette.cs" />
+    <Compile Include="Bridge\WebMessageRouter.cs" />
+    <Compile Include="Services\ProjectPaths.cs" />
+    <Compile Include="Services\LibraryService.cs" />
+    <Compile Include="Commands\SelectSourceCommand.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

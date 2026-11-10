@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArchDoorLibrary</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">ArchDoorLibrary</div>
+      <div class="subtitle">Thư viện cửa nhôm định hình · AutoCAD 2023 / 2024</div>
+    </div>
+    <span class="status" id="connection">Đang kết nối</span>
+  </header>
+
+  <main>
+    <section class="toolbar">
+      <button id="reloadBtn" class="primary">Tải thư viện</button>
+      <button id="selectBtn">Chọn đối tượng CAD</button>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">Thư viện cửa</div>
+      <div id="libraryStatus" class="muted">Đang tải dữ liệu...</div>
+      <div id="doorList" class="door-list"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">Tạo bản ghi cửa mẫu</div>
+      <label>Mã cửa <input id="doorId" value="AD001"></label>
+      <label>Tên cửa <input id="doorName" value="Cửa đi 2 cánh vòm"></label>
+      <div class="grid">
+        <label>Rộng (mm) <input id="doorWidth" type="number" value="1800"></label>
+        <label>Cao (mm) <input id="doorHeight" type="number" value="2400"></label>
+      </div>
+      <button id="saveBtn">Lưu bản ghi JSON</button>
+      <p class="hint">Bản ghi này là dữ liệu khởi tạo. Chưa phải lệnh dựng hình cửa hoàn chỉnh.</p>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">Nhật ký</div>
+      <pre id="log">Sẵn sàng.</pre>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

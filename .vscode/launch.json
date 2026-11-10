@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach to AutoCAD",
+      "type": "clr",
+      "request": "attach",
+      "processName": "acad.exe"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "id": "AD001",
+  "name": "Cửa đi 2 cánh vòm (mẫu minh họa)",
+  "units": "mm",
+  "dimensions": {
+    "width": 1800,
+    "height": 2400
+  },
+  "arch": {
+    "type": "circular",
+    "rise": 300,
+    "radius": 1500
+  },
+  "structure": {
+    "leafCount": 2
+  },
+  "members": [
+    {
+      "id": "M001",
+      "role": "outer_frame_left",
+      "profileCode": "KB-01",
+      "resizeRule": "fixed_section"
+    },
+    {
+      "id": "M002",
+      "role": "outer_frame_right",
+      "profileCode": "KB-01",
+      "resizeRule": "fixed_section"
+    },
+    {
+      "id": "M003",
+      "role": "meeting_stile",
+      "profileCode": "KC-01",
+      "resizeRule": "fixed_section"
+    }
+  ],
+  "sourceGeometry": [],
+  "constraints": [
+    {
+      "type": "symmetric_about_centerline",
+      "members": [
+        "M001",
+        "M002"
+      ]
+    }
+  ],
+  "note": "Dữ liệu khởi tạo minh họa; profileCode và thông số vòm cần được hiệu chỉnh theo bản vẽ thực tế."
+}

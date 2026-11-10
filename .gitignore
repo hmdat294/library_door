@@ -1,0 +1,11 @@
+.vs/
+.vscode/.browse.VC.db*
+**/bin/
+**/obj/
+*.user
+*.suo
+*.pdb
+*.dll
+*.cache
+*.log
+.DS_Store
